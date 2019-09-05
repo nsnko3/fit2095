@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> <!--Setting the xml namespace-->
+<head>
+    <meta charset="utf-8" /> <!--Setting it to use utf-8 encoding-->
+    <title>New Task</title> <!--Page meta title-->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!--Linking the stylesheet-->
+</head>
+<body>
+
+    <a href="/"><h2>Home</h2></a> <!--Heading that appears at the top of the page-->
+    <a href="/listtasks"><h2>List All Tasks</h2></a><!--Link to list all tasks-->
+
+    <form action="/newtask" method="get">
+        <!-- The form uses the get method to extract the data that you submitted from the url in order to store that data. It is not being posted to a database. If it was then the method would be post-->
+        <label for="taskName"><strong>Task Name: </strong></label> <!--Label for the name input-->
+        <input type="text" name="taskname" id="taskname" placeholder="Task Name" /><br /> <!--Actual input area for task name-->
+        <label for="taskDue"><strong>Task Due: </strong></label><!--Label for due date-->
+        <input type="text" name="taskdue" id="taskdue" placeholder="Task Due" /><br /><!--Input area for due date-->
+        <label for="taskDesc"><strong>Task Desc: </strong></label><!--Label for description-->
+        <input type="text" name="taskdesc" id="taskdesc" placeholder="Task Description" /> <!-- Input area for description-->   <br /> <!--Create a break/space between input area above and item that follows-->
+        <br /><br /><br /> <!--More breaks to create more lines of space-->
+        <input type="submit" name="submit" value="Submit" /><!--Button to submit input. Has to be of type submit-->
+    </form>
+
+</body>
+</html>

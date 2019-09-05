@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> <!--Setting the xml namespace-->
+<head>
+    <meta charset="utf-8" /> <!-- Setting it to use utf-8 encoding-->
+    <title>List tasks</title> <!--Page meta title-->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!--Linking the stylesheet-->
+</head>
+<body>
+
+    <a href="/"><h2>Home</h2></a> <!--Heading that appears at the top of the page-->
+    <a href="/newtask"><h2>Add New Task</h2></a> <!--Link to add new task-->
+
+    <h3>
+        The existing tasks are: <!--H3 heading which appears before the task list-->
+    </h3>
+        <table>
+            <tr>
+                <td>Name</td><!--This is where the table columns are created. In this case we have the name, due date, and description-->
+                <td>Due</td>
+                <td>Description</td>
+            </tr><!--This is used to create table rows while td is for columns-->
+            <% for ( var i =0; i< tasksDb.length;i++){ %> <!--We then populate the table with whatever has been stored in the tasks array. We loop through it to find all the details of the task-->
+            <tr>
+                <!--This row then contains the actual values in their respective columns hence the td tags inside the encompassing tr tag-->
+                <td>
+                    <%= tasksDb[i].TaskName %> <!--Value for task name-->
+                </td>
+                <td>
+                    <%= tasksDb[i].TaskDue %> <!--Value for task due date-->
+                </td>
+                <td>
+                    <%= tasksDb[i].TaskDesc %> <!--Value for task description-->
+                </td>
+            </tr>
+            <% }%> <!--This is where the loop then ends. Everything had to be inside the for loop for each value to show. If it was outside then only one value would show-->
+    </table>
+</body>
+</html>
